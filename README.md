@@ -66,3 +66,4 @@ Definition of Done: Ticket gilt als fertig wenn:
 
 --------------------------------------------------------------------------------------------------------------------------------------
 
+Hochfahren des Servers lokal: in Terminal: node server.js
