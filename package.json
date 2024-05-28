@@ -1,5 +1,5 @@
 {
-    "description": "Express App für Web-Anwendung",
-    "version": "1.0"
-    
+  "dependencies": {
+    "express": "^4.19.2"
+  }
 }
