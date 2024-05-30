@@ -1,5 +1,26 @@
 {
+  "name": "projekt-www",
+  "version": "1.0.0",
+  "description": "Dieses Projekt soll die Technik HTML und JavaScript benutzen, um eine Webseite zu entwickeln.  Es sollen HTTP-Abfragen, SVG, URL-Weiterleitung und CSS benutzt werden.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NoHealNeeded/Projekt-WWW.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NoHealNeeded/Projekt-WWW/issues"
+  },
+  "homepage": "https://github.com/NoHealNeeded/Projekt-WWW#readme",
   "dependencies": {
-    "express": "^4.19.2"
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "pg": "^8.11.5"
   }
 }

@@ -3,12 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <title>Document</title>
+    <style>
+        .container-back-button {
+            position: fixed;
+            left: 15px;
+            top: 15px;
+        }        
+    </style>
 </head>
 <body>
-    <p style="font-size:3vw" >Welcome to the Suchspiel</p>
-    <form action="./index.html">
-        <input type="submit" value="Return to Main" />
-    </form>
+    
+    <div class="container-back-button">
+        <button class="button is-link is-light" onclick="goToMain()">
+            <span class="icon">
+                <i class="fas fa-arrow-left"></i>
+            </span>
+            <span>Zurück</span>
+        </button>
+    </div>
+
+    <script>
+        function goToMain() {
+            window.location.href = 'index.html';
+        }
+    </script>
 </body>
 </html>
