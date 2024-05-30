@@ -1,14 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    <p style="font-size:3vw" >Welcome to the Guessing game</p>
+  </head>
+  <body>
+    <p style="font-size: 3vw">Welcome to the Guessing game</p>
     <form action="./index.html">
-        <input type="submit" value="Return to Main" />
+      <input type="submit" value="Return to Main" />
     </form>
-</body>
+    <p style="font-size: 2vw">
+      You need to guess my number between 1 and 10, but with each guess my
+      number changes and your tries increase <br />
+      If you cannot guess my number you will have to live with terrible shame
+    </p>
+    <input style="font-size: 1.5vw" id="input" type="number" />
+    <input
+      style="font-size: 1.5vw"
+      id="Guess"
+      type="button"
+      value="Guess"
+      onclick="testing();"
+    />
+    <p style="font-size: 2.5vw" id="result"></p>
+    <img src="./Images/clueless.png" id="imageTroll" width="300" height="300" />
+    <script>
+      let count = 0;
+      let lastInput = 0;
+      function testing() {
+        //get id's
+        let resultText = document.getElementById("result");
+        let inputNumber = document.getElementById("input").value;
+        //reset image
+        document.getElementById("imageTroll").src = "";
+        //check repetiv input
+        if (0 > inputNumber || inputNumber > 10) {
+          count++;
+          resultText.innerHTML =
+            "no cheataing put in another number, im gonna increase your tries by 1, your current tries are now " +
+            count;
+
+          document.getElementById("imageTroll").src = "./Images/ultraMad.png";
+          console.log(document.getElementById("imageTroll").src);
+          //check if the number is even or not
+        } else {
+          lastInput = inputNumber;
+          randomNumber = Math.round(Math.random() * 10);
+          console.log(randomNumber);
+          if (randomNumber == inputNumber) {
+            resultText.innerHTML =
+              "Damn you got it, congratualation it was " + randomNumber;
+            +"you needed " + count + " tries to catch me";
+            count = 0;
+            lastInput = 0;
+            document.getElementById("imageTroll").src = "./Images/caught.png";
+          } else if (randomNumber > inputNumber) {
+            count++;
+            resultText.innerHTML =
+              "Close, it was " + randomNumber + ", tries: " + count;
+            document.getElementById("imageTroll").src = "./Images/omegaLUL.png";
+          } else {
+            count++;
+            resultText.innerHTML =
+              "Ätsch it was " + randomNumber + ", tries: " + count;
+            document.getElementById("imageTroll").src = "./Images/pepoL.png";
+          }
+        }
+      }
+    </script>
+  </body>
 </html>
