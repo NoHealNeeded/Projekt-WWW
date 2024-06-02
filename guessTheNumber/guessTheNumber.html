@@ -4,12 +4,22 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <script
+      defer
+      src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"
+    ></script>
   </head>
   <body>
+    <div class="container-back-button">
+      <button class="button is-link is-light" onclick="goToMain()">
+        <span class="icon">
+          <i class="fas fa-arrow-left"></i>
+        </span>
+        <span>Zurück</span>
+      </button>
+    </div>
     <p style="font-size: 3vw">Welcome to the Guessing game</p>
-    <a href="./index.html">
-      <img src="./Images/ButtonReturn.png">
-    </a>
+
     <p style="font-size: 2vw">
       You need to guess my number between 1 and 10, but with each guess my
       number changes and your tries increase <br />
@@ -26,6 +36,9 @@
     <p style="font-size: 2.5vw" id="result"></p>
     <img src="./Images/clueless.png" id="imageTroll" width="300" height="300" />
     <script>
+      function goToMain() {
+        window.location.pathname = "./index.html";
+      }
       let count = 0;
       let lastInput = 0;
       function testing() {
@@ -47,7 +60,6 @@
         } else {
           lastInput = inputNumber;
           randomNumber = Math.round(Math.random() * 10);
-          console.log(randomNumber);
           if (randomNumber == inputNumber) {
             resultText.innerHTML =
               "Damn you got it, congratualation it was " + randomNumber;

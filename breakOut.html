@@ -11,10 +11,19 @@
   </head>
   <body>
     <p style="font-size: 3vw">Welcome to the Break Out Game</p>
-    
-    <button class="button is-primary is-large is-link is-hovered">Return to Menu</button>
-    <a href="./index.html">
-      <img src="./Images/ButtonReturn.png" />
-    </a>
+
+    <div class="container-back-button">
+      <button class="button is-link is-light" onclick="goToMain()">
+        <span class="icon">
+          <i class="fas fa-arrow-left"></i>
+        </span>
+        <span>Zurück</span>
+      </button>
+    </div>
+    <script>
+      function goToMain() {
+        window.location.pathname = "./index.html";
+      }
+    </script>
   </body>
 </html>
