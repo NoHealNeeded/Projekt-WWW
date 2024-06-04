@@ -27,6 +27,17 @@ app.get('/api/image', async (req, res) => {
     try {
         const result = await pool.query('SELECT * FROM images LIMIT 1');
         res.json(result.rows[0]);
+        console.log(result.rows);
+    } catch (err) {
+        console.error(err);
+        res.status(500).send('Server Error');
+    }
+});
+
+app.get('/api/imageInfo', async (req, res) => {
+    try {
+        const result = await pool.query('SELECT * FROM imageInfos;');
+        res.json(result.rows);
     } catch (err) {
         console.error(err);
         res.status(500).send('Server Error');
