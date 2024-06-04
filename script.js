@@ -9,12 +9,13 @@ document.addEventListener('DOMContentLoaded', async () => {
 });
 
 let allCircs = ['c1','c2','c3','c4','c5', 'c6', 'c7', 'c8', 'c9', 'c10', 'c11', 'c12', 'c13', 'c14', 'c15'];
-
+let totalCircs = 0; //für Anzeige der 
 document.addEventListener('DOMContentLoaded', async () => {
     const response = await fetch('http://localhost:3000/api/imageInfo');
     const imageInfo = await response.json();
     //console.log(imageInfo);
-    for(let i = 0; i < imageInfo.length; i++) {
+    totalCircs = imageInfo.length;
+    for(let i = 0; i < totalCircs; i++) {
         document.getElementById(imageInfo[i].cid).setAttribute("r", imageInfo[i].r);
         document.getElementById(imageInfo[i].cid).setAttribute("cx", imageInfo[i].cx);
         document.getElementById(imageInfo[i].cid).setAttribute("cy", imageInfo[i].cy);
@@ -28,6 +29,10 @@ function increaseCounter(aCircle) {
         document.getElementById(aCircle).setAttribute("opacity", 0.5);
         circArray.push(aCircle);
         counter++;
-        document.getElementById("counter").innerHTML = "Gefundene Fehler: " + counter; 
+        document.getElementById("counter").innerHTML = "Gefundene Fehler: " + counter + "/" + totalCircs; 
     }
 }
+
+/*if(totalCircs==counter && totalCircs != 0) {
+    document.getElementById("counter").innerHTML = "Gewonnen!!!";
+}*/
