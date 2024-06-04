@@ -12,7 +12,13 @@ document.addEventListener('DOMContentLoaded', async () => {
 });
 
 var counter = 0;
-function increaseCounter() {
-    counter++;
-    document.getElementById("counter").innerHTML = "Gefundene Fehler: " + counter;
+let circArray = [];
+function increaseCounter(aCircle) {
+    if( !circArray.includes(aCircle)) {
+        document.getElementById(aCircle).setAttribute("opacity", 0.5);
+        circArray.push(aCircle);
+        counter++;
+        document.getElementById("counter").innerHTML = "Gefundene Fehler: " + counter; 
+    }
+    
 }
