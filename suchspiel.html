@@ -13,13 +13,13 @@
             top: 15px;
         }    
         .container-counter {
-            font-size: 3vw
-            
+            font-size: 2vw;
+            text-align: center;
         }    
     </style>
 </head>
 <body>
-    <p id="counter" class="container-counter"></p>
+    <p id="counter" class="container-counter">Wilkommen beim Suchspiel!</p>
     <div class="container-back-button">
         <button class="button is-link is-light" onclick="goToMain()">
             <span class="icon">
@@ -32,6 +32,10 @@
         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="100%" width="100%" viewBox="0 0 450 220" >
         <image id="pic" href="" width="450" height="220"></image>
         <a>
+            <rect x="0" y="0" opacity="0" width="450" height="220"  >
+            </rect>
+        </a>
+        <a href="javascript:increaseCounter()">
             <rect x="0" y="0" opacity="0" width="450" height="220"  >
             </rect>
         </a>
